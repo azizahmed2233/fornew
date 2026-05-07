@@ -9,9 +9,20 @@
         body { margin: 0; padding: 0; background-color: #f9f9f9; font-family: 'Cairo', sans-serif; display: flex; justify-content: center; min-height: 100vh; }
         .wrapper { width: 100%; max-width: 450px; background: #fff; position: relative; padding-bottom: 140px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
         
-        /* 1. تعديل حجم الشعار العلوي */
-        .header-container { width: 100%; height: 120px; display: flex; justify-content: center; align-items: center; padding-top: 15px; }
-        .header-img { width: 220px; height: auto; object-fit: contain; } /* التحكم في العرض هنا */
+        /* --- تعديل الشعار العلوي --- */
+        .header-container { 
+            width: 100%; 
+            height: 150px; /* زيادة ارتفاع الحاوية */
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            padding-top: 20px; 
+        }
+        .header-img { 
+            width: 280px; /* تكبير العرض من 220 إلى 280 */
+            height: auto; 
+            object-fit: contain; 
+        }
 
         .form-container { padding: 0 25px; text-align: right; z-index: 2; }
         .label { font-weight: bold; margin-bottom: 8px; display: block; font-size: 15px; color: #333; }
@@ -32,9 +43,9 @@
 
         .timer-box { background: #000; color: #fff; width: fit-content; margin: 15px auto; padding: 10px 30px; font-size: 26px; font-weight: bold; border-radius: 8px; }
         
-        /* 6. تعديل خلفية الأسفل */
+        /* --- خلفية الأسفل --- */
         .footer-container { position: absolute; bottom: 0; left: 0; width: 100%; height: 150px; z-index: 1; pointer-events: none; }
-        .footer-img { width: 100%; height: 100%; object-fit: fill; } /* تم التغيير لضمان ملء العرض */
+        .footer-img { width: 100%; height: 100%; object-fit: fill; }
 
         .hidden { display: none !important; }
     </style>
@@ -43,7 +54,6 @@
 
 <div class="wrapper">
     <div class="header-container">
-        <!-- تم وضع الشعار هنا -->
         <img src="logo_masrvi.jpeg" class="header-img">
     </div>
 
@@ -86,7 +96,6 @@
     </div>
 
     <div class="footer-container">
-        <!-- تم وضع خلفية الأسفل هنا -->
         <img src="footer_background.jpeg" class="footer-img">
     </div>
 </div>
@@ -150,4 +159,3 @@
 
 </body>
 </html>
-
